@@ -1,0 +1,8 @@
+[
+  {"name": "Green Slime", "hp": 10, "minAtq": 5, "maxAtq": 10, "minDef": 1, "maxDef": 2, "coins": 15},
+  {"name": "Skeleton", "hp": 15, "minAtq": 6, "maxAtq": 10, "minDef": 2, "maxDef": 4, "coins": 20},
+  {"name": "Blue Slime", "hp": 20, "minAtq": 7, "maxAtq": 10, "minDef": 4, "maxDef": 6, "coins": 25},
+  {"name": "Red Slime", "hp": 30, "minAtq": 10, "maxAtq": 15, "minDef": 6, "maxDef": 8, "coins": 35},
+  {"name": "Evil Villager", "hp": 40, "minAtq": 15, "maxAtq": 20, "minDef": 8, "maxDef": 10, "coins": 45},
+  {"name": "Spider", "hp": 50, "minAtq": 15, "maxAtq": 30, "minDef": 10, "maxDef": 12, "coins": 55}
+]
