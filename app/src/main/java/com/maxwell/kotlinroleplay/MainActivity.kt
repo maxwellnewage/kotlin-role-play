@@ -1,5 +1,6 @@
 package com.maxwell.kotlinroleplay
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() , OnBattleEvents {
 
         btEnemyAtq.setOnClickListener {
             battle.attack(Type.ENEMY)
+        }
+
+        btTerrain.setOnClickListener {
+            val terrainIntent = Intent(this, TerrainActivity::class.java)
+            startActivity(terrainIntent)
         }
     }
 

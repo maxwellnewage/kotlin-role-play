@@ -80,6 +80,15 @@
         android:background="@android:color/holo_red_dark"
         android:textColor="@android:color/white"
         android:text="@string/bt_enemy_attack"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btTerrain"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@android:color/white"
+        android:text="@string/bt_terrain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

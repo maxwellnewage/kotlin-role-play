@@ -10,7 +10,7 @@ import java.io.IOException
 import java.io.InputStream
 
 
-class Utils() {
+class Utils {
 
     fun getEnemiesFromJson(context:Context):ArrayList<Enemy>{
         val inputStream: InputStream = context.resources.openRawResource(R.raw.enemies)
