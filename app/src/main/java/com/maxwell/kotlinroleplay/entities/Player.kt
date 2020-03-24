@@ -10,4 +10,4 @@ class Player(
     minAtq: Int = 1,
     maxAtq: Int = 2,
     minDef: Int = 1,
-    maxDef: Int = 2) : Fighter(name, avatar, hp, minAtq, maxAtq, minDef, maxDef, coins)
+    maxDef: Int = 2) : Fighter(name, avatar, Type.PLAYER, hp, minAtq, maxAtq, minDef, maxDef, coins)

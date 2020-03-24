@@ -7,4 +7,4 @@ class Enemy(name: String,
             minAtq:Int,
             maxAtq:Int,
             minDef:Int,
-            maxDef:Int) : Fighter(name, avatar, hp, minAtq, maxAtq, minDef, maxDef, coins)
+            maxDef:Int) : Fighter(name, avatar, Type.ENEMY, hp, minAtq, maxAtq, minDef, maxDef, coins)
