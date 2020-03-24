@@ -4,9 +4,10 @@ import kotlin.random.Random
 
 class Player(
     name: String,
+    avatar: Int,
+    coins: Int = 10,
     hp: Int = 100,
     minAtq: Int = 1,
     maxAtq: Int = 2,
     minDef: Int = 1,
-    maxDef: Int = 2,
-    coins: Int = 10) : Entity(name, hp, minAtq, maxAtq, minDef, maxDef, coins)
+    maxDef: Int = 2) : Fighter(name, avatar, hp, minAtq, maxAtq, minDef, maxDef, coins)

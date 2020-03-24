@@ -2,5 +2,7 @@ package com.maxwell.kotlinroleplay.entities
 
 enum class Type {
     PLAYER,
-    ENEMY
+    ENEMY,
+    ITEM,
+    EMPTY
 }

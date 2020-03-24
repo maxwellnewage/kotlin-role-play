@@ -1,9 +1,10 @@
 package com.maxwell.kotlinroleplay.entities
 
-class Enemy(name:String,
+class Enemy(name: String,
+            avatar: Int,
+            coins:Int,
             hp:Int,
             minAtq:Int,
             maxAtq:Int,
             minDef:Int,
-            maxDef:Int,
-            coins:Int) : Entity(name, hp, minAtq, maxAtq, minDef, maxDef, coins)
+            maxDef:Int) : Fighter(name, avatar, hp, minAtq, maxAtq, minDef, maxDef, coins)

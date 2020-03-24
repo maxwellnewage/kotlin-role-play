@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() , OnBattleEvents {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        hero = Player("Max")
+        hero = Player("Max", R.drawable.ic_empty_terrain)
 
         val enemies = Utils().getEnemiesFromJson(this)
 
