@@ -7,7 +7,7 @@ class Player(
     avatar: Int,
     coins: Int = 10,
     hp: Int = 100,
-    minAtq: Int = 1,
-    maxAtq: Int = 2,
-    minDef: Int = 1,
-    maxDef: Int = 2) : Fighter(name, avatar, Type.PLAYER, hp, minAtq, maxAtq, minDef, maxDef, coins)
+    minAtq: Int = 2,
+    maxAtq: Int = 5,
+    minDef: Int = 2,
+    maxDef: Int = 4) : Fighter(name, avatar, Type.PLAYER, coins, hp, minAtq, maxAtq, minDef, maxDef)

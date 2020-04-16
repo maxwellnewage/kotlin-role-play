@@ -13,6 +13,7 @@
         android:text="Some Quest Text"
         android:gravity="center"
         android:textSize="18sp"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

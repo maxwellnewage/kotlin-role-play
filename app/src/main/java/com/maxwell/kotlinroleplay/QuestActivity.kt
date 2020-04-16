@@ -1,5 +1,7 @@
 package com.maxwell.kotlinroleplay
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_quest.*
 
 class QuestActivity : AppCompatActivity() {
     private var quests: ArrayList<Quest>? = null
+    private val BATTLE_CODE = 1001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,14 @@ class QuestActivity : AppCompatActivity() {
 
         val currentQuest = quests!![questId]
 
+        if(currentQuest.choices == null){
+            val battleIntent = Intent(this, BattleActivity::class.java)
+            battleIntent.putExtra("enemyId", currentQuest.enemyId)
+            battleIntent.putExtra("choiceId", currentQuest.choiceId)
+            startActivityForResult(battleIntent, BATTLE_CODE)
+            return
+        }
+
         tvQuestText.text = currentQuest.text
 
         for (choice in currentQuest.choices) {
@@ -45,6 +56,14 @@ class QuestActivity : AppCompatActivity() {
             }
 
             llQuestChoicesContainer.addView(button)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == BATTLE_CODE && resultCode == Activity.RESULT_OK){
+            runQuest(data!!.getIntExtra("choiceId", 0))
         }
     }
 }

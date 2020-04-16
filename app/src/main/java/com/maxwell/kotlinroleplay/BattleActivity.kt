@@ -1,5 +1,7 @@
 package com.maxwell.kotlinroleplay
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,23 +11,27 @@ import com.maxwell.kotlinroleplay.entities.Player
 import com.maxwell.kotlinroleplay.entities.Type
 import com.maxwell.kotlinroleplay.events.OnBattleEvents
 import com.maxwell.kotlinroleplay.utils.Utils
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_battle.*
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() , OnBattleEvents {
+class BattleActivity : AppCompatActivity() , OnBattleEvents {
     lateinit var battle:Battle
     lateinit var hero:Player
     lateinit var enemy:Enemy
+    var choiceId:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_battle)
 
         hero = Player("Max", R.drawable.ic_empty_terrain)
 
         val enemies = Utils().getEnemiesFromJson(this)
 
-        enemy = enemies[Random.nextInt(0, enemies.size - 1)]
+        val enemyIndex = intent.getIntExtra("enemyId", 0)
+        choiceId = intent.getIntExtra("choiceId", 0)
+
+        enemy = enemies[enemyIndex]
 
         tvHeroName.text = "Hero name: ${hero.name}"
         tvEnemyName.text = "Enemy name: ${enemy.name}"
@@ -63,10 +69,17 @@ class MainActivity : AppCompatActivity() , OnBattleEvents {
     }
 
     override fun onDeath(entityType: Type) {
+        val resultBattleIntent = Intent()
+
         if(entityType == Type.PLAYER){
+            resultBattleIntent.putExtra("choiceId", -1)
             Toast.makeText(this, "You loose!", Toast.LENGTH_SHORT).show()
         } else {
+            resultBattleIntent.putExtra("choiceId", choiceId)
             Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show()
         }
+
+        setResult(Activity.RESULT_OK, resultBattleIntent)
+        finish()
     }
 }
