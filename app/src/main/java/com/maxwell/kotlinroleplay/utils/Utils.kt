@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.maxwell.kotlinroleplay.R
 import com.maxwell.kotlinroleplay.entities.Enemy
+import com.maxwell.kotlinroleplay.quest.Quest
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.InputStream
@@ -17,6 +18,13 @@ class Utils {
         val jsonString = readTextFile(inputStream)
 
         return Gson().fromJson<ArrayList<Enemy>>(jsonString)
+    }
+
+    fun getQuestsFromJson(context:Context):ArrayList<Quest>{
+        val inputStream: InputStream = context.resources.openRawResource(R.raw.story_1)
+        val jsonString = readTextFile(inputStream)
+
+        return Gson().fromJson<ArrayList<Quest>>(jsonString)
     }
 
     private fun readTextFile(inputStream: InputStream):String{
