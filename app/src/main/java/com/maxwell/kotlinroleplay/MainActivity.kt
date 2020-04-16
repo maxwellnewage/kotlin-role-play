@@ -43,11 +43,6 @@ class MainActivity : AppCompatActivity() , OnBattleEvents {
         btEnemyAtq.setOnClickListener {
             battle.attack(Type.ENEMY)
         }
-
-        btTerrain.setOnClickListener {
-            val terrainIntent = Intent(this, TerrainActivity::class.java)
-            startActivity(terrainIntent)
-        }
     }
 
     override fun onDamage(entityType: Type, damage: Int) {

@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "text": "Te embarcas en una aventura increible sin precendentes.",
+    "choices": [
+      { "id": 2, "text": "Vamos alla!" },
+      { "id": 0, "text": "Meh..otro dia." }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Caminas por una senda de piedra y te sorprende un monstruo verde muy extraño",
+    "choices": [
+      { "id": 3, "text": "Luchar con esa cosa!" },
+      { "id": 4, "text": "Escapar!" }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Te enfrentas a un slime salvaje!",
+    "enemyId": 1,
+    "choiceId": 5
+  },
+  {
+    "id": 4,
+    "text": "Intentas escapar...",
+    "choiceId": 5
+  },
+  {
+    "id": 5,
+    "text": "A lo lejos ves un barco mercante. Te acercas con cautela, has escuchado historias terribles sobre capitanes. Un hombre que dobla tu edad probablemente, sale del mismo y te pregunta que haces aqui.",
+    "choices": [
+      { "id": 6, "text": "Queria comprar algunos pescados!" },
+      { "id": 7, "text": "Me gustaria viajar por los 7 mares" },
+      { "id": 8, "text": "Vengo a reclamar este barco como mio!" }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Vendemos los mejores pescados de la isla!",
+    "storeId": 1
+  },
+  {
+    "id": 7,
+    "text": "Te veo un poco delgado para soportar un viaje en barco, me dice. Se que tiene razon, pero ese tesoro no se encontrará solo. Lo miro fijamente y le respondo con seguridad.",
+    "choices": [
+      { "id": 8, "text": "Te demostraré mi valía con un duelo!" },
+      { "id": 10, "text": "Creo que puedo convencerte de lo contrario..." }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Ya veremos si puedes vencerme!",
+    "choiceId": 11
+  },
+  {
+    "id": 11,
+    "text": "Ya puedo viajar! Pero no se donde ir. Le cuento al viejo marinero sobre el tesoro perdido. El marinero asiente y me dice que deberíamos ir a las Islas Cannon, donde vive un hombre sabio.",
+    "choices": [
+      { "id": 0, "text": "Rumbo a la aventura!" }
+    ]
+  }
+]
